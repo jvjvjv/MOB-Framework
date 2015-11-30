@@ -1,0 +1,44 @@
+<section id="views_demo" class="app-view">
+	<ul class="buttons">
+		<li>
+			<h1>Views</h1>
+			<p>Views consist each of an HTML, CSS, and JS file. For example, for this view, called "views_demo" there is a corresponding views_demo.html, views_demo.css, and views_demo.css.</p>
+
+			<p>The slide-out menu includes an option to display viewHistory. Tapping on it will reveal each View ID saved in history.</p>
+		</li>
+		<li>
+			<h2>MOB.views.go()</h2>
+			<div class="green button" data-action="go-login-save">Go to <strong>Login</strong> View (save in history)</div>
+
+			<p>
+				<em>Do not</em> save in history can be tested by signing in, and then tapping on the Back button on the Home View. You should return back to this page, as the <strong>Login</strong> View was not saved in the View History.
+			</p>
+			<div class="green button" data-action="go-login">Go to <strong>Login</strong> View (<em>do not</em> save in history)</div>
+		</li>
+		<li>
+			<h2>MOB.views.goBack()</h2>
+			<div class="green button" data-action="go-back">Go back to previous View</div>
+		</li>
+		<li>
+			<h2>MOB.views.goBackTo()</h2>
+			<div class="blue button" data-action="go-back-home">Go all the way back to <strong>Home</strong> View</div>
+		</li>
+		<li>
+			<h2>MOB.views.template()</h2>
+			<div class="red button" data-action="template">Add a templated item</div>
+			<div class="template-output">
+			</div>
+		</li>
+		<li>
+			<h2>MOB.views.menuToggle()</h2>
+			<div class="red button" data-action="menu">open the menu.</div>
+		</li>
+	</ul>
+
+	<aside class="template" id="views-demo-template">
+		<div class="section">
+			%NAME%<br>
+			%ADDRESS%<br>
+		</div>
+	</aside>
+</section>

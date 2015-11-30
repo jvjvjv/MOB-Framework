@@ -1,0 +1,45 @@
+{
+	"app": {
+		"options": {
+			"defaultTitle": "MOB App",
+			"menu": true,
+			"folders": {
+				"css": "./app/css/",
+				"js": "./app/js/",
+				"html": "./app/html/"
+			}
+		},
+		"elements": {
+			"app": "#app-main",
+			"titleBar": "#title-bar",
+			"title": ".title-bar-title",
+			"titleLeftButton": "#title-bar .left-button",
+			"titleRightButton": "#title-bar .right-button",
+			"menu": "#left-sidebar",
+			"tray": "#slide-out",
+			"views": "#app-views"
+		}
+	},
+	"homeView": "home",
+	"defaultView": "defaultView",
+	"views": [
+		"defaultView",
+		"blank",
+		"home",
+		"login",
+		"util_demo",
+		"events_demo",
+		"titlebar_demo",
+		"views_demo"
+	],
+	"trayViews": [],
+	"css": [
+		"_menu"
+	],
+	"js": [
+		"__touchy"
+	],
+	"menu": "_menu",
+	"twitterAPIKey": "@key.twitter@",
+	"version": "@app.version.standard@"
+}

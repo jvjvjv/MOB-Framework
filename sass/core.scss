@@ -1,0 +1,25 @@
+@import "mixins/2x.scss";
+
+@import "app-views.scss";
+@import "columns.scss";
+@import "form_elements.scss";
+@import "menu.scss";
+@import "screen.scss";
+@import "slide-out.scss";
+@import "title-bar.scss";
+
+* {
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+}
+input {
+	&[type="password"],&[type="text"],&[type="number"],
+	&[type="email"] {
+		-webkit-user-select:text;
+	}
+}
+
+#app-main {
+	-webkit-transform:translate3d(0,0,0);
+	-webkit-transition:all 200ms ease-in-out;
+}

@@ -1,0 +1,1 @@
+alert ("_alert.js successfully loaded");

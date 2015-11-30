@@ -1,0 +1,101 @@
+/********************************************************/
+/* 1. Column Layout                                     */
+/********************************************************/
+
+	.columns {
+		width:100%;
+	}
+	.columns > div,
+	.columns > form {
+		float: left;
+	}
+
+	/* These styles define the columns size. They must be redefined for each responsive size */
+	.column,
+	.one-column,
+	.one-column-tablet,
+	.one-column-mobile,
+	.one-column-mobile-landscape,
+	.one-column-mobile-portrait			{ width: 6.25%; }
+	.two-columns,
+	.two-columns-tablet,
+	.two-columns-mobile,
+	.two-columns-mobile-landscape,
+	.two-columns-mobile-portrait		{ width: 12.5%; }
+	.three-columns,
+	.three-columns-tablet,
+	.three-columns-mobile,
+	.three-columns-mobile-landscape,
+	.three-columns-mobile-portrait		{ width: 18.75%; }
+	.four-columns,
+	.four-columns-tablet,
+	.four-columns-mobile,
+	.four-columns-mobile-landscape,
+	.four-columns-mobile-portrait		{ width: 25%; }
+	.five-columns,
+	.five-columns-tablet,
+	.five-columns-mobile,
+	.five-columns-mobile-landscape,
+	.five-columns-mobile-portrait		{ width: 31.25%; }
+	.six-columns,
+	.six-columns-tablet,
+	.six-columns-mobile,
+	.six-columns-mobile-landscape,
+	.six-columns-mobile-portrait		{ width: 37.5%; }
+	.seven-columns,
+	.seven-columns-tablet,
+	.seven-columns-mobile,
+	.seven-columns-mobile-landscape,
+	.seven-columns-mobile-portrait		{ width: 43.75%; }
+	.eight-columns,
+	.eight-columns-tablet,
+	.eight-columns-mobile,
+	.eight-columns-mobile-landscape,
+	.eight-columns-mobile-portrait		{ width: 50%; }
+	.nine-columns,
+	.nine-columns-tablet,
+	.nine-columns-mobile,
+	.nine-columns-mobile-landscape,
+	.nine-columns-mobile-portrait		{ width: 56.25%; }
+	.ten-columns,
+	.ten-columns-tablet,
+	.ten-columns-mobile,
+	.ten-columns-mobile-landscape,
+	.ten-columns-mobile-portrait		{ width: 62.5%; }
+	.eleven-columns,
+	.eleven-columns-tablet,
+	.eleven-columns-mobile,
+	.eleven-columns-mobile-landscape,
+	.eleven-columns-mobile-portrait		{ width: 68.75%; }
+	.twelve-columns,
+	.twelve-columns-tablet,
+	.twelve-columns-mobile,
+	.twelve-columns-mobile-landscape,
+	.twelve-columns-mobile-portrait		{ width: 75%; }
+	.thirteen-columns,
+	.thirteen-columns-tablet,
+	.thirteen-columns-mobile,
+	.thirteen-columns-mobile-landscape,
+	.thirteen-columns-mobile-portrait		{ width: 81.25%; }
+	.fourteen-columns,
+	.fourteen-columns-tablet,
+	.fourteen-columns-mobile,
+	.fourteen-columns-mobile-landscape,
+	.fourteen-columns-mobile-portrait		{ width: 87.5%; }
+	.fifteen-columns,
+	.fifteen-columns-tablet,
+	.fifteen-columns-mobile,
+	.fifteen-columns-mobile-landscape,
+	.fifteen-columns-mobile-portrait		{ width: 93.75%; }
+	.sixteen-columns,
+	.sixteen-columns-tablet,
+	.sixteen-columns-mobile,
+	.sixteen-columns-mobile-landscape,
+	.sixteen-columns-mobile-portrait		{ width: 100%; }
+
+	/* Line breaks to ensure correct float */
+	.new-row,
+	.new-row-mobile,
+	.new-row-mobile-portrait {
+		clear: left;
+	}

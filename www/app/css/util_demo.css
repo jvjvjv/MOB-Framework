@@ -1,0 +1,23 @@
+#util_demo {}
+
+#util_demo h2 {
+	font-size:16px;
+}
+
+#util_demo .button {
+	margin:5px 0;
+}
+
+#util_demo .section {
+	border:2px inset #cccccc;
+	margin:5px;
+	padding:5px;
+}
+
+#util_demo .my-class {
+	margin:5px 0;
+	padding:5px;
+}
+#util_demo .purple {
+	background-color:#ff00ff;
+}

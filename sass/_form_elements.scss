@@ -1,0 +1,38 @@
+/* NEW SELECT LISTS
+**********************************************************/
+div.select-wrapper {
+	display:inline-block;
+	position:relative;
+	width:100%;
+	-webkit-box-sizing:border-box;
+}
+	div.select-wrapper select.mob {
+		background:none;
+		border:none;
+		font-size:1em;
+		opacity:0;
+		padding-top:1em;
+		padding-bottom:1em;
+		width:100%;
+		-webkit-appearance:none;
+		-webkit-box-sizing:border-box;
+	}
+	div.select-wrapper .select-caption {
+		z-index:-1;
+		display:inline-block;
+		margin-top:1em;
+		margin-bottom:1em;
+		position:absolute;
+		left:2px; top:0.1em;
+
+	}
+	div.select-wrapper .select-arrow {
+		background:url('../img/icon/select-arrow.png') no-repeat center center;
+		display:inline-block;
+		margin-top:1em;
+		margin-bottom:1em;
+		position:absolute;
+		right:0; top:4px;
+		width:20px; height:12px;
+		z-index:-1;
+	}

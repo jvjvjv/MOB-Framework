@@ -1,0 +1,125 @@
+<project name="MOB Framework" basedir="." default="help">
+	<description>
+		Helper functions to ease the monotony of tasks associated with this Mobile App
+	</description>
+
+	
+	<property file="local.properties" />
+	<property file="build.properties" />
+
+	<target name="help" description="Displays Help">
+		<echo>
+MOB Framework comes with a few useful tips.
+
+ADDING VIEWS TO MOB:
+
+ant createview
+
+Creates new CSS, HTML, and JS files for the specified view ID. You will be prompted to enter the view ID.
+
+ant createview -Did="{id}"
+
+Does the same as above for the specified view ID.
+
+BUILDING FROM SRC FOLDER:
+
+ant build-web
+
+Copies the contents of the SRC folder to WWW folder, replacing any tokens with the values specified in build.properties or another properties file you have added to build.xml
+* You can edit the build.xml to add or remove any token/value pairs
+		</echo>
+	</target>
+
+	<target name="-init">
+		<tstamp>
+			<format property="time_started" pattern="yyyy.MM.d hh:mm a" />
+		</tstamp>
+		<echo>Operation started ${time_started}</echo>
+	</target>
+	
+	<target name="-has-id">
+		<condition property="has-id">
+			<isset property="id" />
+		</condition>
+	</target>
+	
+	<target name="-get-id" depends="-has-id" unless="has-id">
+		<input message="Please specify the View to create" addproperty="id" />
+		<condition property="has-id">
+			<and>
+			<isset property="id" />
+			<not>
+				<equals arg1="${id}" arg2="" />
+			</not>
+			</and>
+		</condition>
+	</target>
+		
+	<target name="createview" depends="-init,-get-id,-has-id" description="Creates new CSS, HTML, and JS files for the specified ID">
+		<fail unless="has-id">You must specify a View ID.</fail>
+
+		<copy file="${directory.template}/_template.css" tofile="${directory.css}/${id}.css">
+	          <filterset begintoken="@" endtoken="@" onmissingfiltersfile="fail">
+	              <filter token="template" value="${id}" />
+	          </filterset>
+		</copy>
+
+		<copy file="${directory.template}/_template.html" tofile="${directory.html}/${id}.html">
+	          <filterset begintoken="@" endtoken="@" onmissingfiltersfile="fail">
+	              <filter token="template" value="${id}" />
+	          </filterset>
+		</copy>
+		
+		<copy file="${directory.template}/_template.js" tofile="${directory.js}/${id}.js">
+	          <filterset begintoken="@" endtoken="@" onmissingfiltersfile="fail">
+	              <filter token="template" value="${id}" />
+	          </filterset>
+		</copy>
+		
+		<echo>View, ViewController, and CSS for ${id} created successfully</echo>
+
+		<exec executable="node" dir=".">
+			<arg line="ant-lib/addView.js" />
+			<arg line="${directory.src}"/>
+			<arg line="${id}" />
+		</exec>
+		<echo>New ${id} view added successfully</echo>
+	</target>
+
+	<target name="build-web" description="Takes the SRC folder and copies to WWW folder, performing all necessary processing on the SRC files" depends="-version-update-build">
+		<tstamp>
+			<format property="now" pattern="hh:mm:ss a" /> 
+		</tstamp>
+		<echo>Copying files from ${directory.src} to ${directory.www} ${now}</echo>
+		<echo>You may customize your tokens by editing build.xml</echo>
+		<copy todir="${directory.www}">
+			<fileset dir="${directory.src}" excludes="config.*"/>
+		</copy>
+
+		<copy overwrite="true" todir="${directory.www}" file="${directory.src}/config.xml">
+			<filterset begintoken="@" endtoken="@" onmissingfiltersfile="fail">
+				<filter token="app.title" value="${app.title}" />
+				<filter token="app.bundle" value="${app.bundle}" />
+				<filter token="app.description" value="${app.description}" />
+				<filter token="app.author.name" value="${app.author.name}" />
+				<filter token="app.author.email" value="${app.author.email}" />
+				<filter token="app.author.url" value="${app.author.url}" />
+				<filter token="app.version" value="${app.version}" />
+			</filterset>
+		</copy>
+
+		<copy overwrite="true" todir="${directory.www}" file="${directory.src}/config.json">
+			<filterset begintoken="@" endtoken="@" onmissingfiltersfile="fail">
+				<!-- all custom tokens should be placed here -->
+				<filter token="app.version" value="${app.version}" />
+				<filter token="key.twitter" value="${key.twitter}" />
+			</filterset>
+		</copy>
+	</target>
+	<target name="-version-update-build">
+		<propertyfile file="build.properties">
+			<entry key="app.version.build" type="int" operation="+" default="1" />
+		</propertyfile>
+	</target>
+
+</project>

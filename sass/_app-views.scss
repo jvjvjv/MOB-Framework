@@ -1,0 +1,57 @@
+#app-views {
+	background-image:-webkit-linear-gradient(top,#fafafa,#f0f0f0);
+	overflow:scroll;
+	position:relative;
+	top:0em; left:0;
+	text-shadow:0 1px 0 #f0f0f0;
+	width:100%; height:100%;
+
+	-webkit-box-sizing:border-box;
+	-webkit-overflow-scrolling: touch;
+	-webkit-transform:translate3d(0,0,0);
+
+	.app-view {
+		display:none;
+		margin-bottom:2.5em;
+		padding:0.5em;
+
+		-webkit-box-sizing:border-box;
+		-webkit-transform:translate3d(0,0,0);
+
+		&.active {
+			display:block;
+		}
+
+		&.no-titlebar {
+			margin-bottom:0;
+		}
+
+		aside.template {display:none}
+
+		h1 {
+			font-size:1.2em;
+			margin:0;
+			padding:0;
+		}
+		h2 {
+			font-size:1.1em;
+			margin:0;
+			padding:0;
+		}
+		h3 {
+			font-size:1em;
+			margin:0;
+			padding:0;
+		}
+		h4 {
+			font-size:0.9em;
+			margin:0;
+			padding:0;
+		}
+	}
+
+	&.no-scroll {
+		overflow:hidden;
+		-webkit-overflow-scrolling: none;
+	}
+}
